@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solitary Spokes & Melodies</title>
+    <!-- Tailwind CSS for modern layout -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Elegant Serif and modern Sans-Serif -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #ffffff;
+            color: #1e293b; /* Dark Slate text for great contrast */
+            overflow-x: hidden;
+        }
+        .font-serif-classic {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* --- Intro Animation --- */
+        #intro-overlay {
+            position: fixed;
+            inset: 0;
+            background: #ffffff;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeOutOverlay 1s ease-in-out forwards;
+            animation-delay: 4.5s;
+        }
+        .bell-ring {
+            font-size: 2rem;
+            color: #1e293b;
+            opacity: 0;
+            transform: scale(0.2);
+            animation: zoomRing 2.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            animation-delay: 0.5s;
+        }
+        @keyframes zoomRing {
+            0% { transform: scale(0.2); opacity: 0; text-shadow: 0 0 0 rgba(0,0,0,0); }
+            50% { transform: scale(4); opacity: 1; text-shadow: 0 0 30px rgba(0,0,0,0.15); }
+            100% { transform: scale(1.5); opacity: 1; }
+        }
+        @keyframes fadeOutOverlay {
+            to { opacity: 0; visibility: hidden; }
+        }
+
+        /* --- Hero Background Transition --- */
+        .hero-bg {
+            /* Adjusted gradient overlay to work beautifully with a white background bleed */
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), #ffffff), 
+                              url('https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            opacity: 0;
+            animation: revealHero 2s ease-out forwards;
+            animation-delay: 3s;
+        }
+        @keyframes revealHero {
+            to { opacity: 1; }
+        }
+
+        /* --- Classic Earphone Wires (Subtle Grey/Silver against white) --- */
+        .earphone-wire {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100vh;
+            background: linear-gradient(to bottom, rgba(203, 213, 225, 0.8), rgba(203, 213, 225, 0.2) 70%, rgba(203, 213, 225, 0.9));
+            z-index: 10;
+            pointer-events: none;
+        }
+        .earphone-wire::before {
+            content: '';
+            position: absolute;
+            top: 25%; left: -10px; width: 20px; height: 150px;
+            border: 2px solid transparent;
+            border-left: 2px solid rgba(203, 213, 225, 0.6);
+            border-radius: 50% 0 0 50%;
+        }
+        .earphone-wire::after {
+            content: '';
+            position: absolute;
+            top: 60%; left: -2px; width: 20px; height: 180px;
+            border: 2px solid transparent;
+            border-right: 2px solid rgba(203, 213, 225, 0.6);
+            border-radius: 0 50% 50% 0;
+        }
+
+        /* --- Scrolling Vertical Cycle Animation (Rotated downwards, tires right) --- */
+        #scroll-cycle {
+            position: fixed;
+            right: 5%;
+            top: 15%;
+            z-index: 40;
+            transition: top 0.2s ease-out;
+            font-size: 2.5rem;
+            color: #475569;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+        }
+        
+        /* Rotates the bicycle to head vertically down with wheels facing right */
+        .rotate-downward {
+            transform: rotate(90deg);
+            display: inline-block;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SUMMARY POP-UP BUTTON -->
+    <button onclick="alert('Summary: This website is a cinematic celebration of drifting through the city on two wheels, finding peace on local benches, and scoring the journey with beautiful melodies. Thanks for visiting!')" class="fixed bottom-6 left-6 z-50 bg-slate-900 text-white text-xs uppercase tracking-widest px-4 py-2.5 rounded-full shadow-lg hover:bg-slate-700 transition font-semibold">Quick Summary</button>
+
+    <!-- 1. INTRO OVERLAY: Cinematic Cycle Ring -->
+    <div id="intro-overlay">
+        <div class="text-center">
+            <div class="bell-ring mb-4">
+                <i class="fa-solid fa-bell-on"></i>
+                <p class="font-serif-classic text-sm tracking-widest mt-3 uppercase text-slate-500">The Ring of Dawn</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. THE EARPHONE WIRE -->
+    <div class="earphone-wire"></div>
+
+    <!-- 3. SCROLLING CYCLE INDICATOR (Facing downwards, tires right) -->
+    <div id="scroll-cycle">
+        <div class="flex flex-col items-center">
+            <div class="rotate-downward">
+                <i class="fa-solid fa-bicycle"></i>
+            </div>
+            <span class="text-[9px] tracking-widest uppercase text-slate-400 mt-4 font-semibold">Wandering</span>
+        </div>
+    </div>
+
+    <!-- 4. HERO SECTION -->
+    <header class="relative h-screen flex items-center justify-center hero-bg text-center px-4">
+        <div class="max-w-3xl z-20">
+            <h1 class="font-serif-classic text-5xl md:text-7xl font-bold tracking-tight text-slate-900 mb-6 drop-shadow-sm">
+                The Art of Drifting
+            </h1>
+            <p class="text-lg md:text-xl text-slate-700 font-light tracking-wide max-w-xl mx-auto">
+                Two wheels. One pair of classic wires. An endless symphony of a city unfolding at its own gentle pace.
+            </p>
+            <div class="mt-12 animate-pulse">
+                <a href="#philosophy" class="text-xs uppercase tracking-widest text-slate-900 border-b border-slate-900 pb-2 hover:text-slate-600 hover:border-slate-600 transition font-semibold">Scroll to Wander</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 5. MAIN CONTENT -->
+    <main class="relative z-20 max-w-5xl mx-auto px-6 py-24 space-y-40">
+
+        <!-- Section 1: The Rhythm of the Streets -->
+        <section id="philosophy" class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <span class="font-serif-classic italic text-sm tracking-wider text-slate-500">01. Perspective</span>
+                <h2 class="font-serif-classic text-3xl md:text-4xl font-semibold text-slate-900">Chasing Unseen Corners</h2>
+                <p class="text-slate-600 leading-relaxed font-light">
+                    When you pedal through your own city without a destination, the mundane turns into a canvas. Alleys you never noticed open up into secret courtyards. The speed of a bicycle is the perfect speed to view the world—fast enough to cover ground, slow enough to appreciate the architecture of the ordinary.
+                </p>
+            </div>
+            <div class="rounded-lg overflow-hidden shadow-xl border border-slate-100">
+                <img src="https://images.unsplash.com/photo-1541614101331-1a5a3a194e92?auto=format&fit=crop&w=800&q=80" alt="Alley cycling" class="hover:scale-105 transition duration-700">
+            </div>
+        </section>
+
+        <!-- Section 2: The Bench and The Sanctuary -->
+        <section class="grid md:grid-cols-2 gap-12 items-center md:flex-row-reverse">
+            <div class="md:order-2 space-y-6">
+                <span class="font-serif-classic italic text-sm tracking-wider text-slate-500">02. The Pause</span>
+                <h2 class="font-serif-classic text-3xl md:text-4xl font-semibold text-slate-900">The Sanctuary of Local Benches</h2>
+                <p class="text-slate-600 leading-relaxed font-light">
+                    Every park bench is a grandstand for people-watching or a silent harbor for contemplation. Leaning the cycle against a tree, clearing the mind, and simply sitting still is where the true adventure happens. It’s a temporary pause button on a hyper-connected world.
+                </p>
+            </div>
+            <div class="md:order-1 rounded-lg overflow-hidden shadow-xl border border-slate-100">
+                <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=800&q=80" alt="Park Bench" class="hover:scale-105 transition duration-700">
+            </div>
+        </section>
+
+        <!-- Section 3: The Soundtrack -->
+        <section class="text-center max-w-2xl mx-auto space-y-8 bg-slate-50 p-8 rounded-2xl border border-slate-100 backdrop-blur-sm shadow-sm">
+            <span class="font-serif-classic italic text-sm tracking-wider text-slate-500">03. The Soundtrack</span>
+            <h2 class="font-serif-classic text-3xl md:text-4xl font-semibold text-slate-900">A Wire Tied to Peace</h2>
+            <p class="text-slate-600 font-light leading-relaxed">
+                As the ambient noise of traffic fades, low-fidelity beats, cinematic ambiances, or slow acoustic tunes travel down those white chords. The music doesn't block out the city; it scores it like a personal movie.
+            </p>
+            <div class="flex justify-center space-x-6 text-2xl text-slate-400">
+                <i class="fa-solid fa-music animate-pulse"></i>
+                <i class="fa-solid fa-headphones"></i>
+                <i class="fa-solid fa-sliders"></i>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 6. FOOTER -->
+    <footer class="border-t border-slate-100 bg-slate-50 text-center py-12 relative z-20 text-xs tracking-widest text-slate-400 uppercase font-medium">
+        <p>© 2026 Solitary Spokes. Pedaling through life, one track at a time.</p>
+    </footer>
+
+    <!-- JavaScript to Handle Vertical Cycle Movement via Scroll -->
+    <script>
+        window.addEventListener('scroll', () => {
+            const cycle = document.getElementById('scroll-cycle');
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = scrollTop / docHeight;
+            
+            const startTop = 15;
+            const endTop = 80;
+            const currentTop = startTop + (scrollPercent * (endTop - startTop));
+            
+            cycle.style.top = `${currentTop}%`;
+        });
+    </script>
+
+</body>
+</html>
