@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nepali Culture — An Illustrated Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#161B33;
+    --night-deep:#0D1024;
+    --parchment:#F1E4C9;
+    --parchment-dim:#e7d7b3;
+    --marigold:#E8A33D;
+    --vermilion:#B5483D;
+    --forest:#3C5B45;
+    --gold:#C89B3C;
+    --ink:#241C12;
+    --max:1120px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--night-deep);
+    color:var(--parchment);
+    font-family:'Source Serif 4', serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+  .eyebrow{
+    font-family:'Work Sans', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.16em;
+    font-size:0.72rem;
+    font-weight:600;
+    color:var(--marigold);
+  }
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+
+  .flag-divider{
+    display:flex;
+    width:100%;
+    height:14px;
+  }
+  .flag-divider span{flex:1;}
+  .flag-divider span:nth-child(1){background:#3B5AA0;}
+  .flag-divider span:nth-child(2){background:#EDEDED;}
+  .flag-divider span:nth-child(3){background:#B5483D;}
+  .flag-divider span:nth-child(4){background:#3C5B45;}
+  .flag-divider span:nth-child(5){background:#E8A33D;}
+
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(13,16,36,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid rgba(200,155,60,0.25);
+  }
+  .nav-inner{
+    max-width:var(--max); margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px;
+  }
+  .nav-inner .brand{font-family:'Fraunces',serif; font-size:1.15rem; font-weight:700; letter-spacing:0.01em;}
+  .nav-inner .brand em{font-style:normal; color:var(--marigold);}
+  nav.links{display:flex; gap:22px; flex-wrap:wrap;}
+  nav.links a{
+    font-family:'Work Sans', sans-serif; font-size:0.82rem; font-weight:500;
+    color:var(--parchment-dim); text-decoration:none;
+    padding-bottom:3px; border-bottom:1px solid transparent;
+    transition:color .2s, border-color .2s;
+  }
+  nav.links a:hover{color:var(--marigold); border-color:var(--marigold);}
+
+  .hero{
+    position:relative;
+    min-height:92vh;
+    display:flex; align-items:center;
+    background:
+      radial-gradient(ellipse at 50% 0%, #232a52 0%, transparent 55%),
+      linear-gradient(180deg, var(--night) 0%, var(--night-deep) 100%);
+    overflow:hidden;
+  }
+  .hero .stars{position:absolute; inset:0; opacity:0.5;}
+  .hero-inner{
+    max-width:var(--max); margin:0 auto; padding:80px 24px 0;
+    width:100%; position:relative; z-index:2;
+  }
+  .hero h1{
+    font-size:clamp(2.6rem, 6vw, 5rem);
+    line-height:1.03;
+    max-width:11ch;
+    margin-top:18px;
+  }
+  .hero h1 .accent{color:var(--marigold); font-style:italic; font-weight:500;}
+  .hero p.lede{
+    max-width:46ch; margin-top:22px; font-size:1.1rem; color:var(--parchment-dim);
+  }
+  .hero-mountains{
+    position:absolute; left:0; right:0; bottom:0; width:100%; z-index:1;
+  }
+  .scroll-cue{
+    font-family:'Work Sans',sans-serif; font-size:0.72rem; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--gold); position:absolute; bottom:26px; left:24px;
+    display:flex; align-items:center; gap:8px; z-index:3;
+  }
+  .scroll-cue::after{content:''; width:1px; height:26px; background:var(--gold); animation:pulse 2s infinite;}
+  @keyframes pulse{0%,100%{opacity:0.3;} 50%{opacity:1;}}
+
+  section{max-width:var(--max); margin:0 auto; padding:88px 24px;}
+  section.tight{padding-top:64px; padding-bottom:64px;}
+  .section-head{max-width:60ch; margin-bottom:44px;}
+  .section-head h2{font-size:clamp(1.8rem,3.4vw,2.6rem); margin-top:10px;}
+  .section-head p{color:var(--parchment-dim); margin-top:14px; font-size:1.02rem;}
+
+  .facts{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:1px; background:rgba(200,155,60,0.25);
+    border:1px solid rgba(200,155,60,0.25);
+    margin-top:8px;
+  }
+  .facts .fact{background:var(--night-deep); padding:22px 20px;}
+  .facts .fact .num{font-family:'Fraunces',serif; font-size:1.5rem; color:var(--marigold); font-weight:600;}
+  .facts .fact .lab{font-family:'Work Sans',sans-serif; font-size:0.74rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--parchment-dim); margin-top:4px;}
+
+  .grid{display:grid; gap:20px;}
+  .grid.cols-3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+  .grid.cols-2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
+  .card{
+    background:linear-gradient(180deg, rgba(241,228,201,0.05), rgba(241,228,201,0.02));
+    border:1px solid rgba(241,228,201,0.14);
+    border-radius:4px;
+    padding:26px 24px;
+  }
+  .card h3{font-size:1.15rem; color:var(--parchment); margin-bottom:8px;}
+  .card p{color:var(--parchment-dim); font-size:0.95rem;}
+  .card .tag{
+    font-family:'Work Sans',sans-serif; font-size:0.68rem; text-transform:uppercase;
+    letter-spacing:0.08em; color:var(--marigold); display:inline-block; margin-bottom:10px;
+  }
+
+  .festival-row{
+    display:grid; grid-template-columns:120px 1fr; gap:22px;
+    padding:20px 0; border-bottom:1px solid rgba(241,228,201,0.12);
+  }
+  .festival-row:last-child{border-bottom:none;}
+  .festival-row .when{font-family:'Work Sans',sans-serif; color:var(--marigold); font-size:0.82rem; text-transform:uppercase; letter-spacing:0.06em; padding-top:3px;}
+  .festival-row h3{font-size:1.1rem; margin-bottom:6px;}
+  .festival-row p{color:var(--parchment-dim); font-size:0.95rem;}
+
+  .split{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;}
+  @media (max-width:760px){ .split{grid-template-columns:1fr;} }
+  .panel{
+    background:var(--night); border:1px solid rgba(200,155,60,0.3);
+    border-radius:4px; padding:28px;
+  }
+  .panel h4{font-family:'Work Sans',sans-serif; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--gold); margin-bottom:14px;}
+  .panel ul{list-style:none;}
+  .panel li{padding:9px 0; border-bottom:1px dashed rgba(241,228,201,0.15); font-size:0.95rem; color:var(--parchment-dim);}
+  .panel li:last-child{border-bottom:none;}
+  .panel li strong{color:var(--parchment); font-weight:600;}
+
+  .tier-mark{display:flex; flex-direction:column; align-items:center; gap:3px; width:26px; margin-bottom:6px;}
+  .tier-mark span{display:block; height:3px; background:var(--vermilion);}
+  .tier-mark span:nth-child(1){width:26px;}
+  .tier-mark span:nth-child(2){width:18px;}
+  .tier-mark span:nth-child(3){width:10px;}
+
+  footer{
+    border-top:1px solid rgba(200,155,60,0.25);
+    padding:50px 24px 40px;
+  }
+  footer .foot-inner{max-width:var(--max); margin:0 auto; display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px;}
+  footer p{color:var(--parchment-dim); font-size:0.85rem;}
+
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+    .scroll-cue::after{animation:none;}
+  }
+
+  ::selection{background:var(--vermilion); color:var(--parchment);}
+
+  a:focus-visible, button:focus-visible{outline:2px solid var(--marigold); outline-offset:3px;}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="brand">Nepal<em>&nbsp;/ संस्कृति</em></div>
+    <nav class="links">
+      <a href="#overview">Overview</a>
+      <a href="#peoples">Peoples &amp; Language</a>
+      <a href="#festivals">Festivals</a>
+      <a href="#food">Food</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#arts">Music &amp; Dress</a>
+      <a href="#etiquette">Etiquette</a>
+    </nav>
+  </div>
+  <div class="flag-divider"><span></span><span></span><span></span><span></span><span></span></div>
+</header>
+
+<section class="hero">
+  <svg class="hero-mountains" viewBox="0 0 1200 260" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="0,260 0,150 120,60 240,140 360,40 520,160 640,70 760,170 900,50 1040,150 1200,90 1200,260" fill="#1b2347" opacity="0.7"/>
+    <polygon points="0,260 0,190 160,110 300,180 460,90 600,190 760,110 920,200 1080,120 1200,180 1200,260" fill="#131735" opacity="0.9"/>
+    <g transform="translate(560,150)">
+      <rect x="-6" y="0" width="12" height="60" fill="#0D1024"/>
+      <polygon points="-70,0 70,0 55,-14 -55,-14" fill="#0D1024"/>
+      <polygon points="-50,-14 50,-14 38,-30 -38,-30" fill="#0D1024"/>
+      <polygon points="-30,-30 30,-30 0,-52" fill="#0D1024"/>
+      <line x1="0" y1="-52" x2="0" y2="-68" stroke="#E8A33D" stroke-width="2"/>
+    </g>
+  </svg>
+  <div class="hero-inner">
+    <p class="eyebrow">A guide to the culture of Nepal</p>
+    <h1>Where the <span class="accent">Himalaya</span> meets a hundred living traditions</h1>
+    <p class="lede">Nepal is roughly the size of Illinois, yet it holds more than 125 ethnic groups and over 120 languages inside its folds — from the high Sherpa villages under Everest to the Maithili plains of the Tarai. This is a working map of its peoples, faiths, festivals, food, architecture and everyday customs.</p>
+  </div>
+  <div class="scroll-cue">Scroll</div>
+</section>
+<div class="flag-divider"><span></span><span></span><span></span><span></span><span></span></div>
+
+<section id="overview">
+  <div class="section-head reveal">
+    <p class="eyebrow">01 — Overview</p>
+    <h2>One country, three bands of geography</h2>
+    <p>Nepali culture is inseparable from Nepal's terrain: it rises in three long strips, from the flat Tarai plains bordering India, through the mid-hill valleys where most of the population lives, up to the high Himalaya bordering Tibet. Each band produced its own cuisine, dress, architecture and belief — which is why "Nepali culture" is really a federation of cultures rather than one single tradition.</p>
+  </div>
+  <div class="facts reveal">
+    <div class="fact"><div class="num">125+</div><div class="lab">Ethnic &amp; caste groups</div></div>
+    <div class="fact"><div class="num">120+</div><div class="lab">Languages &amp; dialects</div></div>
+    <div class="fact"><div class="num">3</div><div class="lab">Major UNESCO cultural zones</div></div>
+    <div class="fact"><div class="num">Devanagari</div><div class="lab">National script</div></div>
+    <div class="fact"><div class="num">1768</div><div class="lab">Year of unification, Prithvi Narayan Shah</div></div>
+  </div>
+</section>
+
+<div class="flag-divider"><span></span><span></span><span></span><span></span><span></span></div>
+
+<section id="peoples">
+  <div class="section-head reveal">
+    <p class="eyebrow">02 — Peoples &amp; Language</p>
+    <h2>Many peoples, one Devanagari page</h2>
+    <p>Nepali (an Indo-Aryan language) is the official language and the country's lingua franca, but it is one of well over a hundred mother tongues spoken across the country. Ethnicity in Nepal is closely tied to geography and history.</p>
+  </div>
+  <div class="grid cols-3">
+    <div class="card reveal"><span class="tag">Hill &amp; valley</span><h3>Newar</h3><p>The historic inhabitants of the Kathmandu Valley; builders of its pagoda temples and Durbar Squares, and originators of Nepal Bhasa and a distinct cuisine and festival calendar.</p></div>
+    <div class="card reveal"><span class="tag">Hill</span><h3>Gurung &amp; Magar</h3><p>Communities of the mid-hills, historically associated with Gurkha regiments, known for the Rodi singing tradition and Sorathi and Ghatu dances.</p></div>
+    <div class="card reveal"><span class="tag">Himalaya</span><h3>Sherpa</h3><p>High-altitude communities of Solukhumbu practicing Tibetan Buddhism, closely associated with mountaineering on Everest and the Khumbu region.</p></div>
+    <div class="card reveal"><span class="tag">Hill</span><h3>Tamang &amp; Rai/Limbu</h3><p>Tamang communities surround the Kathmandu Valley; Rai and Limbu peoples of the east follow the Kirat Mundhum tradition and have their own scripts and calendars.</p></div>
+    <div class="card reveal"><span class="tag">Tarai plains</span><h3>Tharu</h3><p>Indigenous people of the Tarai lowlands with their own language, stilt-house architecture in places, and the Sakhiya and stick dances.</p></div>
+    <div class="card reveal"><span class="tag">Tarai plains</span><h3>Madhesi communities</h3><p>Maithili, Bhojpuri and Bajjika-speaking communities of the southern plains, closely linked culturally to neighboring parts of India, celebrating Chhath and Holi with particular intensity.</p></div>
+  </div>
+</section>
+
+<div class="flag-divider"><span></span><span></span><span></span><span></span><span></span></div>
+
+<section id="festivals">
+  <div class="section-head reveal">
+    <p class="eyebrow">03 — Religion &amp; Festivals</p>
+    <h2>A calendar built for celebration</h2>
+    <p>Most Nepalis practice Hinduism or Buddhism, and the two traditions overlap so closely — shared temples, shared festivals, shared deities — that Nepal is often described as a living laboratory of syncretism. Kirat, Islamic, Christian and other communities add their own observances to the same yearly cycle.</p>
+  </div>
+  <div>
+    <div class="festival-row reveal">
+      <div class="when">Sep – Oct</div>
+      <div><h3>Dashain</h3><p>The longest and most important Hindu festival, marking the goddess Durga's victory over the demon Mahishasura. Families reunite, elders bless the young with tika and jamara, and kites fill the sky.</p></div>
+    </div>
+    <div class="festival-row reveal">
+      <div class="when">Oct – Nov</div>
+      <div><h3>Tihar (Yamapanchak)</h3><p>The five-day "festival of lights," honoring crows, dogs, cows and finally the bond between brothers and sisters on Bhai Tika; homes are lit with oil lamps and marigold garlands.</p></div>
+    </div>
+    <div class="festival-row reveal">
+      <div class="when">March</div>
+      <div><h3>Holi (Fagu Purnima)</h3><p>The festival of colour, celebrated with coloured powder and water, marking the arrival of spring.</p></div>
+    </div>
+    <div class="festival-row reveal">
+      <div class="when">Aug – Sep</div>
+      <div><h3>Teej</h3><p>A festival observed largely by women, marked with fasting, red saris, singing and dancing, dedicated to marital wellbeing and the goddess Parvati.</p></div>
+    </div>
+    <div class="festival-row reveal">
+      <div class="when">April – May</div>
+      <div><h3>Buddha Jayanti</h3><p>Marks the birth of Siddhartha Gautama in Lumbini, celebrated widely by Buddhist communities with processions and lamp-lighting.</p></div>
+    </div>
+    <div class="festival-row reveal">
+      <div class="when">Sep (Kathmandu)</div>
+      <div><h3>Indra Jatra &amp; Gai Jatra</h3><p>Newar festivals of the Kathmandu Valley: Indra Jatra honors the god of rain with masked Lakhe dances and the appearance of the Kumari (living goddess); Gai Jatra is a cow procession that has become a day of satire and comedy.</p></div>
+    </div>
+    <div class="festival-row reveal">
+      <div class="when">Dec – Jan</div>
+      <div><h3>Maghe Sankranti &amp; Yomari Punhi</h3><p>Winter solstice-linked festivals; Newar communities mark Yomari Punhi with steamed rice-flour dumplings filled with molasses and sesame.</p></div>
+    </div>
+    <div class="festival-row reveal">
+      <div class="when">Feb (lunar)</div>
+      <div><h3>Losar</h3><p>Tibetan and Sherpa New Year, observed with monastery rituals, dancing, and family feasts in the high Himalayan regions.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="flag-divider"><span></span><span></span><span></span><span></span><span></span></div>
+
+<section id="food">
+  <div class="section-head reveal">
+    <p class="eyebrow">04 — Food</p>
+    <h2>From dal-bhat to the high passes</h2>
+    <p>Everyday Nepali food centers on rice, lentils and vegetables, but each region and community layers on its own specialties.</p>
+  </div>
+  <div class="grid cols-3">
+    <div class="card reveal"><h3>Dal Bhat Tarkari</h3><p>The staple meal eaten across the country: lentil soup, rice, and vegetable curry, often with achar (pickle) and meat on special occasions.</p></div>
+    <div class="card reveal"><h3>Momo</h3><p>Steamed or fried dumplings filled with meat or vegetables, of Tibetan origin, now Nepal's most recognisable street food.</p></div>
+    <div class="card reveal"><h3>Dhindo &amp; Gundruk</h3><p>A thick buckwheat or millet porridge paired with fermented leafy greens — a hill-country staple, especially in the mid-hills.</p></div>
+    <div class="card reveal"><h3>Newari feast food</h3><p>Choila (spiced grilled meat), bara (lentil pancake), and yomari, served as part of elaborate Newar ritual feasts (bhoj).</p></div>
+    <div class="card reveal"><h3>Sel Roti</h3><p>A ring-shaped, slightly sweet rice-flour doughnut, made especially for Tihar and Dashain.</p></div>
+    <div class="card reveal"><h3>Thakali Set</h3><p>A refined version of dal bhat from the Thakali community of Mustang, known across Nepal for its restaurants.</p></div>
+  </div>
+</section>
+
+<div class="flag-divider"><span></span><span></span><span></span><span></span><span></span></div>
+
+<section id="architecture">
+  <div class="section-head reveal">
+    <div class="tier-mark"><span></span><span></span><span></span></div>
+    <p class="eyebrow">05 — Art &amp; Architecture</p>
+    <h2>The pagoda's home valley</h2>
+    <p>The multi-tiered pagoda roof — later carried to China and Japan along Buddhist trade routes — is widely credited to Newar and Nepali master builders of the Kathmandu Valley, most famously Araniko in the 13th century.</p>
+  </div>
+  <div class="split">
+    <div class="panel reveal">
+      <h4>UNESCO World Heritage sites</h4>
+      <ul>
+        <li><strong>Kathmandu Durbar Square</strong> — former royal palace complex, Hanuman Dhoka</li>
+        <li><strong>Patan Durbar Square</strong> — Newar craftsmanship, Krishna Mandir</li>
+        <li><strong>Bhaktapur Durbar Square</strong> — the 55-Window Palace, Nyatapola temple</li>
+        <li><strong>Swayambhunath</strong> — the "Monkey Temple" stupa overlooking the valley</li>
+        <li><strong>Boudhanath</strong> — one of the largest stupas in the world</li>
+        <li><strong>Pashupatinath</strong> — a major Hindu temple complex on the Bagmati River</li>
+        <li><strong>Changu Narayan</strong> — Nepal's oldest surviving Hindu temple</li>
+        <li><strong>Lumbini</strong> — birthplace of Siddhartha Gautama, the Buddha</li>
+      </ul>
+    </div>
+    <div class="panel reveal">
+      <h4>Visual traditions</h4>
+      <ul>
+        <li><strong>Thangka painting</strong> — Buddhist scroll paintings, often of mandalas and deities</li>
+        <li><strong>Mithila (Madhubani) art</strong> — geometric wall and floor paintings from the Tarai, made by women for festivals and weddings</li>
+        <li><strong>Paubha painting</strong> — the Newar equivalent of thangka, older in origin</li>
+        <li><strong>Wood and metal carving</strong> — intricately carved struts, windows and doors on Newar temples and palaces</li>
+        <li><strong>Lokta paper</strong> — handmade paper from the lokta shrub, historically used for manuscripts</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="flag-divider"><span></span><span></span><span></span><span></span><span></span></div>
+
+<section id="arts">
+  <div class="section-head reveal">
+    <p class="eyebrow">06 — Music, Dance &amp; Dress</p>
+    <h2>What is worn, played and danced</h2>
+  </div>
+  <div class="grid cols-2">
+    <div class="card reveal">
+      <span class="tag">Instruments</span>
+      <h3>Sarangi, madal, panche baja</h3>
+      <p>The sarangi (a carved four-stringed fiddle) is traditionally played by the Gandharba caste of wandering minstrels. The madal, a two-headed hand drum, drives most folk and dance music, often alongside the panche baja, a five-instrument ensemble played at weddings and festivals.</p>
+    </div>
+    <div class="card reveal">
+      <span class="tag">Dance</span>
+      <h3>Lakhe, Maruni, Deuda</h3>
+      <p>The Lakhe is a masked demon-guardian dance performed during Indra Jatra. Maruni is a courtly dance of the eastern hills; Deuda is a communal circle dance of the far-western hills, sung responsively through the night.</p>
+    </div>
+    <div class="card reveal">
+      <span class="tag">Men's dress</span>
+      <h3>Daura-Suruwal &amp; Dhaka Topi</h3>
+      <p>The closed-collar Daura-Suruwal, worn with a woven Dhaka-print cap (topi), was Nepal's national dress and is still worn on formal and festival occasions.</p>
+    </div>
+    <div class="card reveal">
+      <span class="tag">Women's dress</span>
+      <h3>Gunyu Cholo &amp; Haku Patasi</h3>
+      <p>The Gunyu Cholo (blouse and wrapped skirt) is a traditional hill dress; Newar women in the Kathmandu Valley wear the black-and-red Haku Patasi. Styles vary widely again among Tharu, Gurung, and Madhesi communities.</p>
+    </div>
+  </div>
+</section>
+
+<div class="flag-divider"><span></span><span></span><span></span><span></span><span></span></div>
+
+<section id="etiquette" class="tight">
+  <div class="section-head reveal">
+    <p class="eyebrow">07 — Everyday Etiquette</p>
+    <h2>Small customs worth knowing</h2>
+  </div>
+  <div class="panel reveal" style="max-width:640px;">
+    <ul>
+      <li><strong>Namaste</strong> — greet with palms pressed together at chest height, a slight bow, rather than a handshake.</li>
+      <li><strong>Right hand only</strong> — give, receive, and eat with the right hand; the left is considered unclean.</li>
+      <li><strong>Shoes off</strong> — remove footwear before entering temples, monasteries, and most homes.</li>
+      <li><strong>Head and feet</strong> — avoid touching anyone's head, and avoid pointing your feet at a person, a shrine, or a fire.</li>
+      <li><strong>Clockwise around stupas</strong> — walk clockwise around Buddhist stupas and mani walls.</li>
+      <li><strong>Tika &amp; prasad</strong> — accept a tika or blessed food offered to you with your right hand as a mark of respect.</li>
+    </ul>
+  </div>
+</section>
+
+<div class="flag-divider"><span></span><span></span><span></span><span></span><span></span></div>
+
+<footer>
+  <div class="foot-inner">
+    <p>A general reference on Nepali culture — traditions vary widely by region and community, and this page only sketches the major threads.</p>
+    <p>नमस्ते 🙏</p>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
